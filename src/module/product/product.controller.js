@@ -10,6 +10,7 @@ const createProductHandler = async (req, res) => {
 };
 
 const getAllProductsHandler = async (req, res) => {
+   console.log("tooooo", req.user.fullname)
    try {
       const products = await getAllProducts(req.query);
       res.json(products);
