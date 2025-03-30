@@ -8,10 +8,7 @@ const productInclude = (query = {}) => {
   if (query.fullname) {
     whereOptions.fullname = { [Op.like]: `%${query.fullname}%` };
   }
-
-  if (query.price) {
-    whereOptions.price = query.price;
-  }
+  
   return [
     {
       model: User,
