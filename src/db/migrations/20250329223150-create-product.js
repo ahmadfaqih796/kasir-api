@@ -24,6 +24,10 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false
       },
+      stock: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       created_by: {
         type: Sequelize.INTEGER,
         allowNull: false,

@@ -18,6 +18,10 @@ const Product = sequelize.define(
       type: DataTypes.FLOAT,
       allowNull: false,
     },
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     created_by: {
       type: DataTypes.INTEGER,
       allowNull: false,
