@@ -1,6 +1,5 @@
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 const User = require("../../models/user.model");
+const { loginAuth } = require("./auth.service");
 
 const register = async (req, res) => {
   try {
@@ -15,21 +14,8 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;
-    const user = await User.findOne({ where: { username } });
-
-    if (!user || !(await bcrypt.compare(password, user.password))) {
-      return res.status(401).json({ message: "Invalid credentials" });
-    }
-
-    const token = jwt.sign(
-      { id: user.id, role: user.role },
-      process.env.JWT_SECRET,
-      {
-        expiresIn: "1d",
-      }
-    );
-
-    res.json({ message: "Login successful", token });
+    const { user, token } = await loginAuth({ username, password });
+    res.json({ message: "Login successful", user, token });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

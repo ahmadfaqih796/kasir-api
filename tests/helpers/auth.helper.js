@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../../src/app"); // Sesuaikan path dengan app.js utama
+const app = require("../../src/app");
 
 const login = async () => {
   const loginResponse = await request(app).post("/auth/login").send({
