@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/server.js",
+    "build": "set NODE_ENV=production && node src/server.js",
     "sequelize": "sequelize",
     "test": "jest --runInBand --detectOpenHandles",
     "test:watch": "jest --watch",
