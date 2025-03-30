@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product API Endpoints POST /products should create a product 1`] = `
+{
+  "created_by": 1,
+  "name": "Mouse",
+  "price": 20,
+  "stock": 50,
+}
+`;
