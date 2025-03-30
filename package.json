@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./src/server.js",
     "sequelize": "sequelize",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --runInBand --detectOpenHandles",
+    "test:watch": "jest --watch"
   },
   "author": "Faqih",
   "license": "ISC",
@@ -19,6 +20,9 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.6.2"
+    "jest": "^29.7.0",
+    "sequelize-cli": "^6.6.2",
+    "sequelize-mock": "^0.10.2",
+    "supertest": "^7.1.0"
   }
 }
