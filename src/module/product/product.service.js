@@ -1,15 +1,9 @@
 const Product = require('../../models/product.model');
-const User = require('../../models/user.model');
+const {productInclude} = require('../../includes/product.include');
 
-const getAllProducts = async () => {
+const getAllProducts = async (query) => {
    const products = await Product.findAll({
-      include: [
-         {
-            model: User,
-            as: 'creator',
-            attributes: ['fullname']
-         }
-      ]
+      include: productInclude(query)
    });
    return products
 };

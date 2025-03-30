@@ -11,7 +11,7 @@ const createProductHandler = async (req, res) => {
 
 const getAllProductsHandler = async (req, res) => {
    try {
-      const products = await getAllProducts();
+      const products = await getAllProducts(req.query);
       res.json(products);
    } catch (error) {
       res.status(500).json({ message: error.message });
