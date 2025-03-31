@@ -1,0 +1,5 @@
+openapi: 3.0.0
+info:
+  title: Kasir API
+  description: Dokumentasi API untuk sistem kasir
+  version: 1.0.0
