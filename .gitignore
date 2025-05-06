@@ -1,4 +1,9 @@
+# folder
 /node_modules
 /coverage
+/.wwebjs_auth
+/.wwebjs_cache
+
+# file
 package-lock.json
 .env
